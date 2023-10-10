@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+
+{% block Navbar%}
+<a class="nav-item nav-link" id="home" href="/">Home</a>
+<a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+{% endblock %}
+
+{% block content %}
+<!--Artist Table--> 
+<div class="container">
+    <table class="table table-success table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ArtistId</th>
+                <th>Name</th> <!-- Use 'th' elements for table headers -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for artist in artists %}
+                <tr>
+                    <td>{{ artist.ArtistId }}</td>
+                    <td>{{ artist.Name }}</td>
+                    <td>
+                        <a href="" class="btn btn-success">Update</a>
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
